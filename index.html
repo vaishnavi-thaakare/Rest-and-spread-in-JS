@@ -177,8 +177,62 @@ function something(a, b, ...c) {
 something(1,8,7,9,8,9,5,6,6)
 
 
+<hr>
+<h3>@ Object destructuring</h3>
+let object = {
+    firstName: "vaishavi",
+    lastName: "thakare",
+    rollNo: 25,
+    city:"Pune"
+}
+
+let { firstName, lastName, rollNo, city } = object;
+console.log(object);
+console.log(object.firstName);
+console.log(firstName);
+console.log(city);
 
 
+
+
+
+let { firstName:name1, lastName:name2, rollNo:roll, city:cityName } = object;
+console.log(name1);
+console.log(roll);
+console.log(cityName);
+
+
+
+
+
+
+
+<hr>
+<h3>@ Array destructuring</h3>
+
+
+
+let array = ["red", "orange", "pink", "black", "white", "blue"];
+console.log(array);
+let one = array[0];
+console.log(one);
+let two = array[1];
+console.log(two)
+
+
+
+
+
+
+
+
+let [first, second, third, fourth, five, six] = array;
+console.log(` the first color is ${first},second color is ${second}`);
+
+
+console.log(array.length);
+let [firstElement, , , , , lastElement] = array;
+console.log(`last element in the array is ${lastElement}`)
 
 
 
