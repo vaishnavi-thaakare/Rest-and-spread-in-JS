@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread and rest in js</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> spread and rest in js</h1>
+    <h3>@ default parameter</h3>
+function fullName(firstName,lastName) {
+    
+    return `Full name is ${firstName} ${lastName}`
+}
+let result = fullName("Vaishnavi", "Thakare");
+console.log(result)
+
+<p> Order matter in case of default parameter</p>
+function fullName(firstName="Vaishnavi",lastName) {
+    
+    return `Full name is ${firstName} ${lastName}`
+}
+let result = fullName("Thakare");
+console.log(result)
+
+<p>Set the default parameter in such way that you will get correct output</p>
+function fullName(firstName,lastName="Thakare") {
+    
+    return `Full name is ${firstName} ${lastName}`
+}
+let result = fullName("Vaishnavi");
+console.log(result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<h3>@ Spread with Array Literals</h3>
+let array = [1, 8, 9, 5, 6, 255, 25, 2, 5];
+console.log(Math.min(...array));
+console.log(Math.max(...array));
+let string = ["vaishnavi", "payal", "nikita", "trupti"];
+console.log(...string);
+
+<p>Each element in an array is seprated by space not by comma.It seprate individual into separate arguments</p>
+
+
+let array1 = [12, 89, 635, 33];
+let array2 = [78, 9, 5, 6, 2, 3];
+let combineTwoArray = [...array1, ...array2];
+console.log(combineTwoArray);
+console.log(array1);
+console.log(array2);
+
+
+let array1 = [12, 89, 635, 33];
+let array2 = [78, 9, 5, 6, 2, 3];
+let combineTwoArray = [...array1, ...array2];
+console.log(array1.push(5555));
+console.log(array1);
+console.log(combineTwoArray);
+
+
+
+<hr>
+<h3>@ Object Literals</h3>
+<p>Here  it has overwritten the element which is same in both the objects</p>
+
+let object1 = {
+    userName: "Vaishnavi",
+    lastName: "thakare",
+    
+}
+let object2 = {
+    firstName: "nikita",
+    lastName:"Sawant"
+}
+
+
+let combineobject = { ...object1, ...object2 };
+console.log(combineobject)
+
+
+
+<p>here I have the change the sequence of two objects</p>
+let object1 = {
+    userName: "Vaishnavi",
+    lastName: "thakare",
+    
+}
+let object2 = {
+    firstName: "nikita",
+    lastName:"Sawant"
+}
+
+
+let combineobject = { ...object2, ...object1 };
+console.log(combineobject)
+
+
+<p>Here the default value is set for one of the element</p>
+let object1 = {
+    userName: "Vaishnavi",
+    lastName: "thakare",
+    
+}
+let object2 = {
+    firstName: "nikita",
+    lastName:"Sawant"
+}
+
+
+let combineobject = { ...object2, ...object1,lastName:"Rathore",};
+console.log(combineobject);
+
+
+<p>error</p>
+let object1 = {
+    userName: "Vaishnavi",
+    lastName: "thakare",
+
+}
+let newObject={...object1, rollNo: 12,email: nehathaakargmail};
+
+console.log(newObject)    
+
+
+<hr>
+<h3>@ Rest Parameter </h3>
+<p>It look like spread but it is not </p>
+function sum(...num) {
+    console.log(...num);
+    let sum = 0;
+    for (let a of num) {
+        sum = sum + a;
+        
+        
+    }console.log(sum)
+   
+}
+sum(1,5,6,6,5,5,9,5,7,5,5,5,9)
+
+
+
+
+function something(a, b, ...c) {
+    console.log(...c);
+    console.log(`${a} ${b}`);
+    console.log(c[0]);
+    console.log(c.length);
+    console.log(c.indexOf(6))
+    
+}
+something(1,8,7,9,8,9,5,6,6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
